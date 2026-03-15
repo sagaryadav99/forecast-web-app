@@ -1,9 +1,11 @@
 import { ActualDataType, ForeCastGenDataType } from "@/types/dataTypes";
 
 export function filterArr(arr: ActualDataType[]) {
-  return arr.map((val) => {
-    return { startTime: val.startTime, generation: val.generation };
-  });
+  return arr
+    .map((val) => {
+      return { startTime: val.startTime, generation: val.generation };
+    })
+    .reverse();
 }
 export function arrToMap(arr: ForeCastGenDataType[]) {
   const map = new Map<string, { startTime: string; generation: number }[]>();
@@ -22,4 +24,46 @@ export function arrToMap(arr: ForeCastGenDataType[]) {
     }
   });
   return map;
+}
+
+export function cutoffMap(
+  map: Map<string, { startTime: string; generation: number }[]>,
+  horizon: number,
+) {
+  const horizonInMs = horizon * 60 * 60 * 1000;
+  const resultMap = new Map<string, number>();
+  map.forEach((valarr, keystartTime) => {
+    const cutoff = new Date(keystartTime).getTime() - horizonInMs;
+    let bestTime = null;
+    for (let i = 0; i < valarr.length; i++) {
+      if (new Date(valarr[i].startTime).getTime() <= cutoff) {
+        if (
+          !bestTime ||
+          new Date(bestTime.startTime).getTime() <
+            new Date(valarr[i].startTime).getTime()
+        ) {
+          bestTime = valarr[i];
+        }
+      }
+    }
+    if (!bestTime) {
+      return;
+    }
+    resultMap.set(keystartTime, bestTime.generation);
+  });
+  return resultMap;
+}
+
+export function combineArr(arr: ActualDataType[], map: Map<string, number>) {
+  return arr
+    .filter((val: ActualDataType) => {
+      return map.has(val.startTime);
+    })
+    .map((val: ActualDataType) => {
+      return {
+        startTime: val.startTime,
+        actualGen: val.generation,
+        ForeCastGen: map.get(val.startTime),
+      };
+    });
 }

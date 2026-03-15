@@ -6,5 +6,6 @@ export default async function Home() {
     },
     body: JSON.stringify({ foreCastHorizon: 4 }),
   });
+  const finaldata = await data.json();
   return <div>helloworld</div>;
 }
