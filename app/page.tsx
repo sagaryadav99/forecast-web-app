@@ -1,3 +1,5 @@
+import { ChartLineLinear } from "@/components/lineChart";
+
 export default async function Home() {
   const data = await fetch("http://localhost:3000/api", {
     method: "POST",
@@ -7,5 +9,9 @@ export default async function Home() {
     body: JSON.stringify({ foreCastHorizon: 4 }),
   });
   const finaldata = await data.json();
-  return <div>helloworld</div>;
+  return (
+    <div className="mx-auto w-[80%]">
+      <ChartLineLinear chartData={finaldata} />
+    </div>
+  );
 }

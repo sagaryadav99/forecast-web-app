@@ -63,7 +63,7 @@ export function combineArr(arr: ActualDataType[], map: Map<string, number>) {
       return {
         startTime: val.startTime,
         actualGen: val.generation,
-        ForeCastGen: map.get(val.startTime),
+        foreCastGen: map.get(val.startTime),
       };
     });
 }
