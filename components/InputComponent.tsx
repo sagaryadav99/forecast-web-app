@@ -12,7 +12,7 @@ export function InputComp({
   setChartData,
 }: InputProp) {
   async function fetchdata() {
-    const data = await fetch("http://localhost:3000/api", {
+    const data = await fetch("/api", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
