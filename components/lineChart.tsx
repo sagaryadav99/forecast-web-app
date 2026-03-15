@@ -56,7 +56,7 @@ export function ChartLineLinear({
             <CartesianGrid vertical={true} />
             <XAxis
               dataKey="startTime"
-              interval={100}
+              interval="preserveStartEnd"
               tickLine={true}
               axisLine={true}
               tickMargin={20}
