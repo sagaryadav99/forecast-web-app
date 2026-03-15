@@ -40,7 +40,7 @@ export function ChartLineLinear({
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Forecast Monitor</CardTitle>
+        <CardTitle>Forecast Monitor For Wind</CardTitle>
         <CardDescription>January 2024</CardDescription>
       </CardHeader>
       <CardContent>
@@ -83,7 +83,13 @@ export function ChartLineLinear({
               content={<ChartTooltipContent />}
             />
             <ChartLegend content={<ChartLegendContent />} />
-            <YAxis />
+            <YAxis
+              label={{
+                value: "POWER (MW)",
+                angle: -90,
+                position: "insideLeft",
+              }}
+            />
             <Line
               dataKey="actualGen"
               type="monotone"

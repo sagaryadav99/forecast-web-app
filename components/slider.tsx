@@ -10,8 +10,9 @@ export function HourSlider({
 }) {
   return (
     <div>
-      <h2>ForeCast Horizon:{horizon}h</h2>
+      <h2>Forecast Horizon: {horizon}h</h2>
       <Slider
+        className="mx-auto w-auto mt-4"
         defaultValue={[4]}
         max={48}
         min={0}
@@ -20,7 +21,6 @@ export function HourSlider({
         onValueChange={(e) => {
           setHorizon(e);
         }}
-        className="mx-auto w-xs"
       />
     </div>
   );

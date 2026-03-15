@@ -1,5 +1,11 @@
 import { DashBoard } from "@/components/dashboard";
+import { ModeToggle } from "@/components/toggleButton";
 
 export default async function Home() {
-  return <DashBoard />;
+  return (
+    <div>
+      <ModeToggle />
+      <DashBoard />
+    </div>
+  );
 }

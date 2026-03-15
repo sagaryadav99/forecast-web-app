@@ -31,19 +31,22 @@ export function DashBoard() {
     fetchData();
   }, []);
   return (
-    <div className="flex h-screen w-full divide-x">
-      <div className="w-[30%] p-6">
-        <InputComp
-          setStartDate={setStartDate}
-          setEndDate={setEndDate}
-          setHorizon={setHorizon}
-          setChartData={setChartData}
-          horizon={horizon}
-          startDate={startDate}
-          endDate={endDate}
-        />
+    <div className="lg:flex w-[95%] border rounded-lg bg-slate-100 mx-auto dark:bg-zinc-900">
+      <div className="lg:w-[40%] w-full p-6">
+        <div className="border rounded-lg dark:bg-zinc-900 bg-slate-200 p-4">
+          <div className="mb-4 text-lg font-bold">Pick Dates</div>
+          <InputComp
+            setStartDate={setStartDate}
+            setEndDate={setEndDate}
+            setHorizon={setHorizon}
+            setChartData={setChartData}
+            horizon={horizon}
+            startDate={startDate}
+            endDate={endDate}
+          />
+        </div>
       </div>
-      <div className="flex-1 p-6">
+      <div className="lg:flex-1 p-6">
         <ChartLineLinear chartData={chartData} />
       </div>
     </div>

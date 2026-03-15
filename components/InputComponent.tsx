@@ -23,20 +23,25 @@ export function InputComp({
     setChartData(fetchedData);
   }
   return (
-    <div className="flex flex-col gap-4">
-      <div>
-        <h2>From</h2>
+    <div className="flex flex-col gap-4 p-2">
+      <div className="flex items-center">
+        <div>From:</div>
         <DatePickerTime setDate={setStartDate} date={startDate} />
       </div>
-      <div>
-        <h2>To</h2>
+      <div className="flex items-center">
+        <div>To:</div>
         <DatePickerTime setDate={setEndDate} date={endDate} />
       </div>
       <div>
         <HourSlider setHorizon={setHorizon} horizon={horizon} />
       </div>
-      <div>
-        <Button variant="outline" size="lg" onClick={fetchdata}>
+      <div className="flex justify-end">
+        <Button
+          variant="outline"
+          size="lg"
+          onClick={fetchdata}
+          className="cursor-pointer"
+        >
           send
         </Button>
       </div>

@@ -22,7 +22,7 @@ export function DatePickerTime({
   const [open, setOpen] = useState(false);
 
   return (
-    <FieldGroup className="mx-auto w-[150px] flex-row">
+    <FieldGroup className="mx-auto w-[95%] pl-2 flex-row">
       <Field>
         <Popover open={open} onOpenChange={setOpen}>
           <PopoverTrigger asChild>
