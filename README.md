@@ -10,6 +10,7 @@ This repo contains two folders "web" and "analysis":
 
 ## Repository Structure
 
+```
 forecast-webapp
 ├── web/ # Next.js application
 │ ├── app/ # App router pages
@@ -23,6 +24,7 @@ forecast-webapp
 │
 ├── README.md
 └── .gitignore
+```
 
 ## Getting Started
 
