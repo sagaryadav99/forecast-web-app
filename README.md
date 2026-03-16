@@ -1,12 +1,14 @@
-## ForeCast Generation Analysis Web App
+# ForeCast Generation Analysis Web App
 
-# This is a full stack application made in Next.js to analyse the actual wind generation power and forecast wind generation power
+### This is a full stack application made in Next.js to analyse the actual wind generation power and forecast wind generation power
 
-# The web app displays a component dashboard in which user can add date and time for the month of January 2024 and can set the horizon also and can visualise forecast vs actual generation.
+### The web app displays a component dashboard in which user can add date and time for the month of January 2024 and can set the horizon also and can visualise forecast vs actual generation.
 
+```
 This repo contains two folders "web" and "analysis":
 1.web => This is the root folder for nextjs app.
 2.analysis => This contains a jupyter notebook used for data analysis.
+```
 
 ## Repository Structure
 
